@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "783338961471",
+    "project_id": "funfit-2021",
+    "storage_bucket": "funfit-2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783338961471:android:8afbe40e09cfae3b51d68a",
+        "android_client_info": {
+          "package_name": "com.drawiin.funfit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "783338961471-1a07o8fs5f8vv6a0lnn6930mu6q5mevn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.drawiin.funfit",
+            "certificate_hash": "1e5fe2ce1bfb30e67a91c850e23882e1218479e7"
+          }
+        },
+        {
+          "client_id": "783338961471-2umi6uli67cmjhhokf7l88el9g370r9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq9Q-xos0Rrq9cZxcqsZcpeYZJm3F7X04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "783338961471-2umi6uli67cmjhhokf7l88el9g370r9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,36 +3,37 @@ package com.drawiin.funfit
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import com.drawiin.funfit.ui.theme.FunFitTheme
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.drawiin.funfit.`common-ui`.theme.FunFitTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             FunFitTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                val navController = rememberNavController()
+                NavHost(navController = navController, startDestination = Route.Home.routeName) {
+                    composable(Route.Home.routeName) {
+                        HomeScreen(
+                            onGoToStudent = { navController.navigate(Route.Student.routeName) },
+                            onGoToTeacher = { navController.navigate(Route.Teacher.routeName) })
+                    }
+                    composable(Route.Teacher.routeName) {
+                        TeacherScreen()
+                    }
+                    composable(Route.Student.routeName) {
+                        StudentScreen()
+                    }
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    FunFitTheme {
-        Greeting("Android")
-    }
+sealed class Route(val routeName: String) {
+    object Home : Route("home")
+    object Teacher : Route("teacher")
+    object Student : Route("student")
 }

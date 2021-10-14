@@ -1,4 +1,4 @@
-package com.drawiin.funfit.ui.theme
+package com.drawiin.funfit.`common-ui`.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
