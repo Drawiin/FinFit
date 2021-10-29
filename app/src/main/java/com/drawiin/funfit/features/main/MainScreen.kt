@@ -1,4 +1,4 @@
-package com.drawiin.funfit
+package com.drawiin.funfit.features.main
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,7 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun HomeScreen(onGoToStudent: () -> Unit, onGoToTeacher: () -> Unit) {
+fun MainScreen(onGoToStudent: () -> Unit, onGoToTeacher: () -> Unit) {
     Column(
         Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

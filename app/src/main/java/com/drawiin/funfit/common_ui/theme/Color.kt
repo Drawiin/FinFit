@@ -1,4 +1,4 @@
-package com.drawiin.funfit.`common-ui`.theme
+package com.drawiin.funfit.common_ui.theme
 
 import androidx.compose.ui.graphics.Color
 

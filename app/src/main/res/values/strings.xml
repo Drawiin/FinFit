@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">FunFit</string>
+    <string name="new_exercise">Novo Exercicio</string>
+    <string name="exercise_name">Nome</string>
+    <string name="add_new">Adicionar</string>
 </resources>

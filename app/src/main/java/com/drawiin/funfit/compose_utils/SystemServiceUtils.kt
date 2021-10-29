@@ -7,8 +7,8 @@ import com.drawiin.funfit.utils.extensions.getClipBoardManager
 
 @Composable
 @ReadOnlyComposable
-fun getClipboardManager()= context().getClipBoardManager()
+fun rememberClipboardManager()= rememberContext().getClipBoardManager()
 
 @Composable
 @ReadOnlyComposable
-fun context() = LocalContext.current
+fun rememberContext() = LocalContext.current
