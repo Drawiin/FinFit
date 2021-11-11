@@ -1,3 +1,10 @@
+import com.drawiin.funfit.buildSrc.Configs
+import com.drawiin.funfit.buildSrc.Versions
+import com.drawiin.funfit.buildSrc.Libs
+import com.drawiin.funfit.buildSrc.TestLibs
+import com.drawiin.funfit.buildSrc.DebugLibs
+import com.drawiin.funfit.buildSrc.AndroidTestLibs
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
@@ -8,11 +15,11 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.drawiin.funfit"
-        minSdk 23
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        applicationId = Configs.applicationId
+        minSdk = Configs.minSdk
+        targetSdk = Configs.targetSdk
+        versionCode = Configs.versionCode
+        versionName = Configs.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -38,8 +45,8 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.5.21'
+        kotlinCompilerExtensionVersion Versions.compose
+        kotlinCompilerVersion Versions.kotlinGradlePlugin
     }
     packagingOptions {
         resources {
@@ -49,24 +56,29 @@ android {
 }
 
 dependencies {
-    implementation "androidx.navigation:navigation-compose:2.4.0-alpha10"
+    implementation Libs.navCompose
 
-    implementation platform('com.google.firebase:firebase-bom:28.4.1')
-    implementation 'com.google.firebase:firebase-database-ktx'
+    implementation platform(Libs.platformFirebaseBom)
+    implementation Libs.firebaseDatabase
 
-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0-rc01"
+    implementation Libs.androidxCore
+    implementation Libs.appCompat
+    implementation Libs.material
 
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation "androidx.compose.material:material:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.3.1'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation Libs.composeUi
+    implementation Libs.composeMaterial
+    implementation Libs.composePreview
+    implementation Libs.activityCompose
+    implementation Libs.viewModelCompose
+
+    implementation Libs.lifecycleRuntime
+
+    testImplementation TestLibs.junit
+
+    androidTestImplementation AndroidTestLibs.junit
+    androidTestImplementation AndroidTestLibs.espresso
+    
+    androidTestImplementation AndroidTestLibs.composeUiTest
+
+    debugImplementation DebugLibs.composeUiTooling
 }
