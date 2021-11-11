@@ -25,8 +25,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.drawiin.funfit.common_ui.composables.AddTrainingDialog
-import com.drawiin.funfit.common_ui.composables.TrainingItem
+import com.drawiin.common_ui.composables.AddTrainingDialog
+import com.drawiin.common_ui.composables.TrainingItem
 import com.drawiin.funfit.features.student.dashboard.StudentDashboardViewModel
 import com.drawiin.funfit.utils.trainings
 
@@ -48,7 +48,7 @@ fun StudentDashboardScreen(studentDashboardViewModel: StudentDashboardViewModel 
             }
         }
     ) {
-        AddTrainingDialog(
+        com.drawiin.common_ui.composables.AddTrainingDialog(
             shouldShowDialog = dialogState,
             onCloseRequested = closeDialog,
             onFillCode = { code -> studentDashboardViewModel.loadExercises(code) }
@@ -61,7 +61,10 @@ fun StudentDashboardScreen(studentDashboardViewModel: StudentDashboardViewModel 
             Spacer(modifier = Modifier.height(32.dp))
             LazyColumn(contentPadding = PaddingValues(vertical = 16.dp)) {
                 items(trainings){ t ->
-                    TrainingItem(training = t, onGoToTrainingDetail)
+                    com.drawiin.common_ui.composables.TrainingItem(
+                        training = t,
+                        onGoToTrainingDetail
+                    )
                     Spacer(modifier = Modifier.height(16.dp))
                 }
             }

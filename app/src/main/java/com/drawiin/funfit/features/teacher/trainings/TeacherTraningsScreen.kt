@@ -19,7 +19,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.drawiin.funfit.common_ui.composables.TrainingItem
+import com.drawiin.common_ui.composables.TrainingItem
 import com.drawiin.funfit.utils.trainings
 
 @ExperimentalMaterialApi
@@ -40,7 +40,10 @@ fun MyTrainingsScreen(onGoToCreateTraining: () -> Unit, onGoToTrainingDetail: ()
             Spacer(modifier = Modifier.height(32.dp))
             LazyColumn(contentPadding = PaddingValues(vertical = 16.dp)) {
                 items(trainings){ t ->
-                    TrainingItem(training = t, onGoToTrainingDetail)
+                    com.drawiin.common_ui.composables.TrainingItem(
+                        training = t,
+                        onGoToTrainingDetail
+                    )
                     Spacer(modifier = Modifier.height(16.dp))
                 }
             }

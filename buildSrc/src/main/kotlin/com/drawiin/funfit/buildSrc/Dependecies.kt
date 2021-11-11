@@ -17,6 +17,8 @@ object Versions {
     const val gradle = "7.0.2"
     const val kotlinGradlePlugin = "1.5.21"
     const val googleServices = "4.3.10"
+
+    const val coroutinesCore = "1.5.0"
 }
 
 object Configs {
@@ -37,6 +39,7 @@ object Libs {
     const val platformFirebaseBom =  "com.google.firebase:firebase-bom:${Versions.platformFirebaseBom}"
     const val firebaseDatabase =  "com.google.firebase:firebase-database-ktx"
 
+    const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesCore}"
 
     const val androidxCore =  "androidx.core:core-ktx:${Versions.androidxCore}"
     const val appCompat =  "androidx.appcompat:appcompat:${Versions.appCompat}"
@@ -48,7 +51,6 @@ object Libs {
 
     const val viewModelCompose =  "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.viewModelCompose}"
     const val navCompose =  "androidx.navigation:navigation-compose:${Versions.navCompose}"
-
 
     const val lifecycleRuntime =  "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}"
     const val activityCompose =  "androidx.activity:activity-compose:${Versions.activityCompose}"

@@ -15,20 +15,20 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.drawiin.funfit.common_ui.composables.ExerciseItem
-import com.drawiin.funfit.common_ui.composables.TransparentAppBar
+import com.drawiin.common_ui.composables.ExerciseItem
+import com.drawiin.common_ui.composables.TransparentAppBar
 import com.drawiin.funfit.utils.exercises
 
 @ExperimentalMaterialApi
 @Composable
 fun TrainingDetailsScreen(goToExerciseDetail: () -> Unit) {
     Scaffold(
-        topBar = { TransparentAppBar("Treinos 8B") {}}
+        topBar = { com.drawiin.common_ui.composables.TransparentAppBar("Treinos 8B") {} }
     ) {
         Column(Modifier.fillMaxSize().padding(it).padding(horizontal = 16.dp)) {
             LazyColumn() {
                 items(exercises) { e ->
-                    ExerciseItem(exercise = e) {
+                    com.drawiin.common_ui.composables.ExerciseItem(exercise = e) {
                         goToExerciseDetail()
                     }
                     Spacer(modifier = Modifier.height(16.dp))

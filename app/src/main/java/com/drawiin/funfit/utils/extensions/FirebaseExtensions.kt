@@ -1,7 +1,7 @@
 package com.drawiin.funfit.utils.extensions
 
-import com.drawiin.funfit.core.arch.Either
-import com.drawiin.funfit.core.error.Failure
+import com.drawiin.core.arch.Either
+import com.drawiin.core.error.Failure
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
