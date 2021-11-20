@@ -1,4 +1,4 @@
-package com.drawiin.funfit
+package com.drawiin.funfit.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

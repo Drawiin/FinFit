@@ -19,6 +19,7 @@ object Versions {
     const val googleServices = "4.3.10"
 
     const val coroutinesCore = "1.5.0"
+    const val hilt = "2.40.1"
 }
 
 object Configs {
@@ -33,10 +34,14 @@ object Classpath {
     const val gradle = "com.android.tools.build:gradle:${Versions.gradle}"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
     const val googleServices = "com.google.gms:google-services:${Versions.googleServices}"
+    const val hilt = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
 }
 
 object Libs {
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
+
+    const val hilt  = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltKapt = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 
     const val platformFirebaseBom =  "com.google.firebase:firebase-bom:${Versions.platformFirebaseBom}"
     const val firebaseDatabase =  "com.google.firebase:firebase-database-ktx"
