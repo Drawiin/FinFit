@@ -44,6 +44,9 @@ fun <E, S> Either<E, S>.getOrElse(value: S): S =
 fun <E, S> Either<E, S>.onError(fn: (error: E) -> Unit): Either<E, S> =
     this.apply { if (this is Either.Error) fn(error) }
 
+fun <L, R> Either<L, R>.onSuccess(fn: (success: R) -> Unit): Either<L, R> =
+    this.apply { if (this is Either.Success) fn(success) }
+
 fun <E, S> Either<E, S>.onFlowSuccess(fn: (success: S) -> Unit): Either<E, S> =
     this.apply { if (this is Either.Success) fn(success) }
 

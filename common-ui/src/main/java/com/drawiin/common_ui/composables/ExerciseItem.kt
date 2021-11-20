@@ -17,7 +17,7 @@ import com.drawiin.core.model.Exercise
 
 @ExperimentalMaterialApi
 @Composable
-fun ExerciseItem(exercise: com.drawiin.core.model.Exercise, onClick: () -> Unit) {
+fun ExerciseItem(exercise: Exercise, onClick: () -> Unit) {
     Surface(
         shape = MaterialTheme.shapes.small,
         onClick = onClick,
@@ -35,7 +35,7 @@ fun ExerciseItem(exercise: com.drawiin.core.model.Exercise, onClick: () -> Unit)
                 style = MaterialTheme.typography.h5,
             )
             Text(
-                text = exercise.duration,
+                text = exercise.duration.toString() + "m",
                 style = MaterialTheme.typography.caption,
                 modifier = Modifier.padding(vertical = Padding.small)
             )
