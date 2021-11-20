@@ -3,8 +3,15 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "FunFit"
 include ':app'
+include ':feature-auth'
+include ':feature-teacher'
+include ':feature-student'
+include ':feature-training'
+include ':core'
+include ':firebase'
+include ':common-ui'
+include ':utils'

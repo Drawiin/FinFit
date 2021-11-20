@@ -12,7 +12,7 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk Configs.targetSdk
 
     defaultConfig {
         applicationId = Configs.applicationId
@@ -46,7 +46,7 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion Versions.compose
-        kotlinCompilerVersion Versions.kotlinGradlePlugin
+        kotlinCompilerVersion Versions.kotlinVersion
     }
     packagingOptions {
         resources {
@@ -56,6 +56,14 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':core')
+    implementation project(path: ':utils')
+    implementation project(path: ':common-ui')
+    implementation project(path: ':feature-auth')
+    implementation project(path: ':feature-teacher')
+    implementation project(path: ':feature-student')
+    implementation project(path: ':feature-training')
+
     implementation Libs.navCompose
 
     implementation platform(Libs.platformFirebaseBom)
