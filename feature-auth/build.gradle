@@ -62,6 +62,8 @@ dependencies {
     implementation Libs.activityCompose
     implementation Libs.viewModelCompose
 
+    implementation Libs.navCompose
+
     implementation Libs.lifecycleRuntime
 
     debugImplementation DebugLibs.composeUiTooling

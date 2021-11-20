@@ -1,4 +1,4 @@
-package com.drawiin.funfit.features.exercise.detail
+package com.drawiin.feature_training.exercise.detail
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
