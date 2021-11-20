@@ -25,9 +25,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.drawiin.funfit.common_ui.composables.AddExerciseDialog
-import com.drawiin.funfit.common_ui.composables.ExerciseItem
-import com.drawiin.funfit.utils.exercises
+import com.drawiin.utils.exercises
 
 @ExperimentalMaterialApi
 @Composable
@@ -47,7 +45,7 @@ fun CreateTrainingScreen() {
             }
         }
     ) {
-        AddExerciseDialog(shouldShowDialog = showAddExerciseDialog,
+        com.drawiin.common_ui.composables.AddExerciseDialog(shouldShowDialog = showAddExerciseDialog,
             onCloseRequested = { showAddExerciseDialog = false }, onFillCode = {})
         Column(
             Modifier
@@ -64,7 +62,7 @@ fun CreateTrainingScreen() {
             Text(text = "Exercicios:", style = MaterialTheme.typography.h6)
             LazyColumn(contentPadding = PaddingValues(vertical = 16.dp)) {
                 items(exercises) { e ->
-                    ExerciseItem(exercise = e) {}
+                    com.drawiin.common_ui.composables.ExerciseItem(exercise = e) {}
                     Spacer(modifier = Modifier.height(16.dp))
                 }
             }
