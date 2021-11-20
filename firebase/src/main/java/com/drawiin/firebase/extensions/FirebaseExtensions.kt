@@ -1,7 +1,8 @@
-package com.drawiin.firebase
+package com.drawiin.firebase.extensions
 
 import com.drawiin.core.arch.Either
 import com.drawiin.core.error.Failure
+import com.google.android.gms.tasks.Task
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -10,6 +11,7 @@ import com.google.firebase.database.ktx.getValue
 import kotlin.coroutines.resume
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.suspendCancellableCoroutine
 
@@ -30,12 +32,14 @@ suspend inline fun <T>DatabaseReference.saveValue(
                 )
             }
             .addOnFailureListener {
-                Either.Error(Failure.UnexpectedError(it))
+                continuation.resume(
+                    Either.Error(Failure.UnexpectedError(it))
+                )
             }
     }
 
 @ExperimentalCoroutinesApi
-inline fun <reified T>DatabaseReference.subscribe()= callbackFlow<Either<Failure, T>> {
+inline fun <reified T>DatabaseReference.subscribe(): Flow<Either<Failure, T>> = callbackFlow<Either<Failure, T>> {
     val listener = object : ValueEventListener {
         override fun onDataChange(snapshot: DataSnapshot) {
             runCatching {
@@ -64,4 +68,15 @@ inline fun <reified T>DatabaseReference.subscribe()= callbackFlow<Either<Failure
     addValueEventListener(listener)
 
     awaitClose { removeEventListener(listener) }
+}
+
+@ExperimentalCoroutinesApi
+suspend inline fun<T> Task<T>.suspend(): Either<Failure, Boolean> = suspendCancellableCoroutine { continuation ->
+   addOnCompleteListener { task ->
+        if (task.isSuccessful){
+            continuation.resume(Either.Success(true))
+        }else {
+            continuation.resume(Either.Error(Failure.UnexpectedError(task.exception ?: Exception())))
+        }
+   }
 }

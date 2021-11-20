@@ -34,9 +34,11 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':core')
+
     implementation Libs.coroutinesCore
 
     implementation platform(Libs.platformFirebaseBom)
     implementation Libs.firebaseDatabase
-    implementation project(path: ':core')
+    implementation Libs.firebaseAuth
 }

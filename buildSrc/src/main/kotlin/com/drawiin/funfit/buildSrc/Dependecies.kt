@@ -40,6 +40,7 @@ object Libs {
 
     const val platformFirebaseBom =  "com.google.firebase:firebase-bom:${Versions.platformFirebaseBom}"
     const val firebaseDatabase =  "com.google.firebase:firebase-database-ktx"
+    const val firebaseAuth =  "com.google.firebase:firebase-auth-ktx"
 
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesCore}"
 
