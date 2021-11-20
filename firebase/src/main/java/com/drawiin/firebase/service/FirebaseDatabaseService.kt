@@ -7,10 +7,16 @@ import com.drawiin.firebase.entitie.FirebaseUser
 import com.drawiin.firebase.extensions.saveValue
 import com.drawiin.firebase.extensions.subscribe
 import com.google.firebase.database.FirebaseDatabase
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Inject
+import javax.inject.Singleton
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 
-class FirebaseDatabaseService(private val db: FirebaseDatabase) {
+@Singleton
+@InstallIn(SingletonComponent::class)
+class FirebaseDatabaseService @Inject constructor(private val db: FirebaseDatabase) {
 
     @ExperimentalCoroutinesApi
     fun getTraining(

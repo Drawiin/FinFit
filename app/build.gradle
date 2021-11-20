@@ -9,6 +9,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -64,10 +66,14 @@ dependencies {
     implementation project(path: ':feature-student')
     implementation project(path: ':feature-training')
 
+    implementation Libs.hilt
+    kapt Libs.hiltKapt
+
     implementation Libs.navCompose
 
     implementation platform(Libs.platformFirebaseBom)
     implementation Libs.firebaseDatabase
+    implementation Libs.firebaseAuth
 
     implementation Libs.androidxCore
     implementation Libs.appCompat
