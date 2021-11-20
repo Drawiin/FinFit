@@ -1,4 +1,4 @@
-package com.drawiin.feature_teacher.trainings
+package com.drawiin.feature_teacher.home
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
