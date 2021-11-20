@@ -25,7 +25,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import com.drawiin.funfit.R
+import com.drawiin.common_ui.R
 
 @Composable
 fun AddTrainingDialog(

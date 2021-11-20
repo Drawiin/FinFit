@@ -25,9 +25,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.drawiin.common_ui.composables.AddExerciseDialog
-import com.drawiin.common_ui.composables.ExerciseItem
-import com.drawiin.funfit.utils.exercises
+import com.drawiin.utils.exercises
 
 @ExperimentalMaterialApi
 @Composable

@@ -10,11 +10,8 @@ android {
     compileSdk Configs.targetSdk
 
     defaultConfig {
-        applicationId = Configs.applicationId
         minSdk = Configs.minSdk
         targetSdk = Configs.targetSdk
-        versionCode = Configs.versionCode
-        versionName = Configs.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -32,10 +29,12 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-        useIR = true
     }
 }
 
 dependencies {
-    implementation Libs.coroutinesCore
+    implementation project(path: ':core')
+
+    implementation Libs.androidxCore
+    implementation Libs.kotlinStdLib
 }

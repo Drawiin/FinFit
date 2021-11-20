@@ -1,14 +1,16 @@
 package com.drawiin.common_ui.compose_utils
 
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.ui.platform.LocalContext
-import com.drawiin.funfit.utils.extensions.getClipBoardManager
+import com.drawiin.utils.extensions.getClipBoardManager
 
 @Composable
 @ReadOnlyComposable
-fun rememberClipboardManager()= rememberContext().getClipBoardManager()
+fun rememberClipboardManager(): ClipboardManager = rememberContext().getClipBoardManager()
 
 @Composable
 @ReadOnlyComposable
-fun rememberContext() = LocalContext.current
+fun rememberContext(): Context = LocalContext.current

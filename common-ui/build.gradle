@@ -12,11 +12,8 @@ android {
     compileSdk Configs.targetSdk
 
     defaultConfig {
-        applicationId = Configs.applicationId
         minSdk = Configs.minSdk
         targetSdk = Configs.targetSdk
-        versionCode = Configs.versionCode
-        versionName = Configs.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -43,7 +40,7 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion Versions.compose
-        kotlinCompilerVersion Versions.kotlinGradlePlugin
+        kotlinCompilerVersion Versions.kotlinVersion
     }
     packagingOptions {
         resources {
@@ -54,6 +51,7 @@ android {
 
 dependencies {
     implementation project(path: ':core')
+    implementation project(path: ':utils')
 
     implementation Libs.androidxCore
     implementation Libs.appCompat

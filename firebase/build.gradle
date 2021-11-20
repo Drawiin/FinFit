@@ -10,11 +10,8 @@ android {
     compileSdk Configs.targetSdk
 
     defaultConfig {
-        applicationId = Configs.applicationId
         minSdk = Configs.minSdk
         targetSdk = Configs.targetSdk
-        versionCode = Configs.versionCode
-        versionName = Configs.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -38,4 +35,8 @@ android {
 
 dependencies {
     implementation Libs.coroutinesCore
+
+    implementation platform(Libs.platformFirebaseBom)
+    implementation Libs.firebaseDatabase
+    implementation project(path: ':core')
 }

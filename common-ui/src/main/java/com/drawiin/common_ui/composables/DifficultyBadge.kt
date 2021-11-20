@@ -16,11 +16,11 @@ import com.drawiin.common_ui.theme.Warning
 import com.drawiin.core.model.ExerciseDifficulty
 
 @Composable
-fun DifficultyBadge(difficulty: com.drawiin.core.model.ExerciseDifficulty) {
+fun DifficultyBadge(difficulty: ExerciseDifficulty) {
     val color = when (difficulty) {
-        com.drawiin.core.model.ExerciseDifficulty.EASY -> Primary
-        com.drawiin.core.model.ExerciseDifficulty.MEDIUM -> Warning
-        com.drawiin.core.model.ExerciseDifficulty.HARD -> Error
+        ExerciseDifficulty.EASY -> Primary
+        ExerciseDifficulty.MEDIUM -> Warning
+        ExerciseDifficulty.HARD -> Error
     }
     Box(
         Modifier
