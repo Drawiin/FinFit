@@ -1,4 +1,4 @@
-package com.drawiin.common_ui.compose_utils
+package com.drawiin.common_ui.utils
 
 import android.content.ClipboardManager
 import android.content.Context

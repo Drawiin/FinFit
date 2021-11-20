@@ -52,7 +52,7 @@ fun StudentDashboardScreen(studentDashboardViewModel: StudentDashboardViewModel 
         AddTrainingDialog(
             shouldShowDialog = dialogState,
             onCloseRequested = closeDialog,
-            onFillCode = { code -> studentDashboardViewModel.loadExercises(code) }
+            onAddClicked = { code -> studentDashboardViewModel.loadExercises(code) }
         )
         Column(
             Modifier
@@ -63,8 +63,9 @@ fun StudentDashboardScreen(studentDashboardViewModel: StudentDashboardViewModel 
             LazyColumn(contentPadding = PaddingValues(vertical = 16.dp)) {
                 items(trainings){ t ->
                     TrainingItem(
-                        training = t,
-                        onGoToTrainingDetail
+                        title = t.title,
+                        quantity = t.exercises.size,
+                        onClick = onGoToTrainingDetail
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                 }

@@ -1,4 +1,4 @@
-package com.drawiin.funfit.features.teacher.create_training
+package com.drawiin.feature_training.training.create
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -45,8 +45,6 @@ fun CreateTrainingScreen() {
             }
         }
     ) {
-        com.drawiin.common_ui.composables.AddExerciseDialog(shouldShowDialog = showAddExerciseDialog,
-            onCloseRequested = { showAddExerciseDialog = false }, onFillCode = {})
         Column(
             Modifier
                 .fillMaxSize()
@@ -62,7 +60,6 @@ fun CreateTrainingScreen() {
             Text(text = "Exercicios:", style = MaterialTheme.typography.h6)
             LazyColumn(contentPadding = PaddingValues(vertical = 16.dp)) {
                 items(exercises) { e ->
-                    com.drawiin.common_ui.composables.ExerciseItem(exercise = e) {}
                     Spacer(modifier = Modifier.height(16.dp))
                 }
             }

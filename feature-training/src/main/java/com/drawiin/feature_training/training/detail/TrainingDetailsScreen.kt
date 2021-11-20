@@ -18,14 +18,11 @@ import com.drawiin.utils.exercises
 @Composable
 fun TrainingDetailsScreen(goToExerciseDetail: () -> Unit) {
     Scaffold(
-        topBar = { com.drawiin.common_ui.composables.TransparentAppBar("Treinos 8B") {} }
+
     ) {
         Column(Modifier.fillMaxSize().padding(it).padding(horizontal = 16.dp)) {
             LazyColumn() {
                 items(exercises) { e ->
-                    com.drawiin.common_ui.composables.ExerciseItem(exercise = e) {
-                        goToExerciseDetail()
-                    }
                     Spacer(modifier = Modifier.height(16.dp))
                 }
             }

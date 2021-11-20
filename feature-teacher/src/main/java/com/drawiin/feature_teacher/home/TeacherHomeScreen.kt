@@ -40,8 +40,9 @@ fun MyTrainingsScreen(onGoToCreateTraining: () -> Unit, onGoToTrainingDetail: ()
             LazyColumn(contentPadding = PaddingValues(vertical = 16.dp)) {
                 items(trainings){ t ->
                     com.drawiin.common_ui.composables.TrainingItem(
-                        training = t,
-                        onGoToTrainingDetail
+                        title = t.title,
+                        quantity = t.exercises.size,
+                        onClick = onGoToTrainingDetail
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                 }
