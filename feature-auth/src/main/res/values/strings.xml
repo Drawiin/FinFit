@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onboard_button_next">Próximo</string>
+    <string name="onboard_button_lets_play">Vamos Brincar!</string>
+    <string name="onboard_step_01">Chegou o app mais divertido da cidade, com o <b>FunFit</b> você se exercita brincando</string>
+    <string name="onboard_step_02">Aqui os professores podem criar treinos sob medida para seus alunos se exercitarem brincando</string>
+    <string name="onboard_step_03">Compartilhe os treinos personalizados com todo mundo e ajude as pessoas a se exercitatem</string>
+</resources>

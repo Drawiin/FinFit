@@ -20,6 +20,8 @@ object Versions {
 
     const val coroutinesCore = "1.5.0"
     const val hilt = "2.40.1"
+
+    const val accompanist = "0.20.2"
 }
 
 object Configs {
@@ -38,6 +40,9 @@ object Classpath {
 }
 
 object Libs {
+    const val accompanistPager =  "com.google.accompanist:accompanist-pager:${Versions.accompanist}"
+    const val accompanistPagerIndicator =  "com.google.accompanist:accompanist-pager-indicators:${Versions.accompanist}"
+
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
 
     const val hilt  = "com.google.dagger:hilt-android:${Versions.hilt}"

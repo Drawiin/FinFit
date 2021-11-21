@@ -16,7 +16,7 @@ object Values {
 }
 
 object Padding {
-    val tiny = Values.x1
+    val tiny = Values.x2
     val small = Values.x4
     val medium = Values.x8
 }

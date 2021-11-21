@@ -71,5 +71,8 @@ dependencies {
 
     implementation Libs.lifecycleRuntime
 
+    implementation Libs.accompanistPager
+    implementation Libs.accompanistPagerIndicator
+
     debugImplementation DebugLibs.composeUiTooling
 }

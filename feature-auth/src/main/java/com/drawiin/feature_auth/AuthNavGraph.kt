@@ -1,28 +1,20 @@
 package com.drawiin.feature_auth
 
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.drawiin.common_ui.composables.AddTrainingDialog
-import com.drawiin.common_ui.composables.TextInput
 import com.drawiin.core.arch.NavigationRoute
+import com.drawiin.feature_auth.presentation.onboard.OnboardScreen
+import com.google.accompanist.pager.ExperimentalPagerApi
 
+@ExperimentalPagerApi
 fun NavGraphBuilder.addAuthNavGraph(navHostController: NavHostController, routeName: String){
     navigation(route = routeName, startDestination = AuthRoutes.Onboard.routeName){
         composable(AuthRoutes.Onboard.routeName){
-            
-            Scaffold() {
-                AddTrainingDialog(
-                    shouldShowDialog = true,
-                    onCloseRequested = { /*TODO*/ },
-                    onAddClicked = {}
-                )
-            }
-
+            OnboardScreen { navHostController.navigate(AuthRoutes.Start.routeName)}
         }
 
         composable(AuthRoutes.Start.routeName){
