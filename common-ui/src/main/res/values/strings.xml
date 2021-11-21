@@ -3,4 +3,9 @@
     <string name="new_exercise">Novo Exercicio</string>
     <string name="exercise_name">Nome</string>
     <string name="add_new">Adicionar</string>
+    <string name="add_training_dialog_title">Código do treino</string>
+    <string name="add_training_dialog_body">Peça para o seu professor o sódigo do treino e digite-o aqui, para adicionar o treino a sua lista</string>
+    <string name="add_training_dialog_input_label">Codigo do treino</string>
+    <string name="add_training_dialog_negative_button">Cancelar</string>
+    <string name="add_training_dialog_positive_button">Adicionar</string>
 </resources>

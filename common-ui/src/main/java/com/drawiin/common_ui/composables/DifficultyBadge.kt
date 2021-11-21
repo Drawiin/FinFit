@@ -10,15 +10,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import com.drawiin.common_ui.theme.Error
 import com.drawiin.common_ui.theme.Padding
-import com.drawiin.common_ui.theme.Primary
-import com.drawiin.common_ui.theme.Surface
+import com.drawiin.common_ui.theme.PrimaryColor
+import com.drawiin.common_ui.theme.SurfaceColor
 import com.drawiin.common_ui.theme.Warning
 import com.drawiin.core.model.ExerciseDifficulty
 
 @Composable
 fun DifficultyBadge(difficulty: ExerciseDifficulty) {
     val color = when (difficulty) {
-        ExerciseDifficulty.EASY -> Primary
+        ExerciseDifficulty.EASY -> PrimaryColor
         ExerciseDifficulty.MEDIUM -> Warning
         ExerciseDifficulty.HARD -> Error
     }
@@ -30,7 +30,7 @@ fun DifficultyBadge(difficulty: ExerciseDifficulty) {
     ) {
         Text(
             text = difficulty.title,
-            style = MaterialTheme.typography.caption.copy(color = Surface)
+            style = MaterialTheme.typography.caption.copy(color = SurfaceColor)
         )
     }
 }
