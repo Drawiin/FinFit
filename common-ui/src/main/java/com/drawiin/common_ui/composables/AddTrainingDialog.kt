@@ -54,7 +54,6 @@ fun AddTrainingDialog(
                 onNegativeButtonClicked = onCloseRequested
             )
         }
-
 }
 
 @Composable
