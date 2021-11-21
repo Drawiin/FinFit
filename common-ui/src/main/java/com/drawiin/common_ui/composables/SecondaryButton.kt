@@ -32,7 +32,7 @@ fun SecondaryButton(
     OutlinedButton(
         onClick = onClick,
         shape = MaterialTheme.shapes.medium,
-        contentPadding = PaddingValues(Padding.small),
+        contentPadding = PaddingValues(Padding.tiny),
         border = BorderStroke(
             Border.small, OnSurface
         )
