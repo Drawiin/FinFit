@@ -8,4 +8,11 @@
     <string name="onboard_step_03">Compartilhe os treinos personalizados com todo mundo e ajude as pessoas a se exercitatem</string>
     <string name="auth_start_login">Entrar</string>
     <string name="auth_start_singnup">Criar conta</string>
+    <string name="signup_create_account">Criar conta</string>
+    <string name="auth_step_name">Qual o seu nome ?</string>
+    <string name="auth_field_name">Nome</string>
+    <string name="auth_step_email">Agora seu melhor email</string>
+    <string name="auth_field_email">Email</string>
+    <string name="auth_step_password">Escolha uma senha</string>
+    <string name="auth_field_password">Senha</string>
 </resources>

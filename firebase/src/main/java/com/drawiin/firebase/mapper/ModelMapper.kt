@@ -4,10 +4,10 @@ import com.drawiin.core.model.Exercise
 import com.drawiin.core.model.ExerciseDifficulty
 import com.drawiin.core.model.Training
 import com.drawiin.core.model.User
+import com.drawiin.core.model.UserType
 import com.drawiin.firebase.entitie.FirebaseExercise
 import com.drawiin.firebase.entitie.FirebaseTraining
 import com.drawiin.firebase.entitie.FirebaseUser
-import com.drawiin.firebase.entitie.FirebaseUserType
 
 fun FirebaseExercise.toModel() = Exercise(
     uid = uid,
@@ -24,16 +24,9 @@ fun FirebaseTraining.toModel() = Training(
     exercises = exercises.map { it.toModel() }
 )
 
-fun FirebaseUser.toModel(): User = when(FirebaseUserType.valueOf(type)) {
-    FirebaseUserType.TEACHER -> User.Teacher(
-            uid = uid,
-            name = name,
-            trainings = trainings.map { it.toModel() }
-        )
-
-    FirebaseUserType.STUDENT -> User.Student(
-        uid = uid,
-        name = name,
-        trainings = trainings.map { it.toModel() }
-    )
-}
+fun FirebaseUser.toModel(): User = User(
+    uid = uid,
+    name = name,
+    trainings = trainings.map { it.toModel() },
+    type = UserType.valueOf(type)
+)

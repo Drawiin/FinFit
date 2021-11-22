@@ -8,6 +8,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import com.drawiin.common_ui.theme.FunFitTheme
 import com.drawiin.common_ui.theme.OnSurface
@@ -21,7 +22,8 @@ fun TextInput(
     value: String,
     onValueChanged: (String) -> Unit,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
-    keyboardActions: KeyboardActions = KeyboardActions.Default
+    keyboardActions: KeyboardActions = KeyboardActions.Default,
+    visualTransformation: VisualTransformation = VisualTransformation.None
 ) {
     OutlinedTextField(
         modifier = modifier,
@@ -40,7 +42,8 @@ fun TextInput(
             )
         },
         keyboardOptions = keyboardOptions,
-        keyboardActions = keyboardActions
+        keyboardActions = keyboardActions,
+        visualTransformation = visualTransformation
     )
 }
 

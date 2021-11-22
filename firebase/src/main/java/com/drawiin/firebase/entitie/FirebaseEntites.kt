@@ -21,7 +21,3 @@ data class FirebaseUser(
     val type: String = "",
     val trainings: List<FirebaseTraining> = listOf()
 )
-
-enum class FirebaseUserType(){
-    STUDENT, TEACHER
-}
