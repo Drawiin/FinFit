@@ -85,6 +85,8 @@ dependencies {
     implementation Libs.activityCompose
     implementation Libs.viewModelCompose
 
+    implementation Libs.accompanistPager
+
     implementation Libs.lifecycleRuntime
 
     testImplementation TestLibs.junit

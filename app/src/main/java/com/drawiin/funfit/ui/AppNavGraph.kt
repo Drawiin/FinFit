@@ -8,12 +8,23 @@ import com.drawiin.feature_auth.addAuthNavGraph
 import com.drawiin.feature_student.addStudentNavGraph
 import com.drawiin.feature_teacher.addTeacherNavGraph
 import com.drawiin.feature_training.addTrainingNavGraph
+import com.google.accompanist.pager.ExperimentalPagerApi
 
+@ExperimentalPagerApi
 @Composable
 fun AppNavGraph() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = AppRoutes.Auth.routeName) {
-        addAuthNavGraph(navController, AppRoutes.Auth.routeName)
+        addAuthNavGraph(
+            navController,
+            AppRoutes.Auth.routeName,
+            goToStudentGraph = {
+                navController.navigate(AppRoutes.Student.routeName)
+            },
+            goToTeacherGraph = {
+                navController.navigate(AppRoutes.Teacher.routeName)
+            }
+        )
         addStudentNavGraph(navController, AppRoutes.Student.routeName)
         addTeacherNavGraph(navController, AppRoutes.Teacher.routeName)
         addTrainingNavGraph(navController, AppRoutes.Training.routeName)

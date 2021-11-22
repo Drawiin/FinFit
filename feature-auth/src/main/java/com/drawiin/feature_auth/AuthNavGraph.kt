@@ -8,11 +8,17 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.drawiin.core.arch.NavigationRoute
 import com.drawiin.feature_auth.presentation.onboard.OnboardScreen
+import com.drawiin.feature_auth.presentation.signup.SignUpScreen
 import com.drawiin.feature_auth.presentation.start.AuthStartScreen
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 @ExperimentalPagerApi
-fun NavGraphBuilder.addAuthNavGraph(navHostController: NavHostController, routeName: String){
+fun NavGraphBuilder.addAuthNavGraph(
+    navHostController: NavHostController,
+    routeName: String,
+    goToStudentGraph: () -> Unit,
+    goToTeacherGraph : () -> Unit
+){
     navigation(route = routeName, startDestination = AuthRoutes.Onboard.routeName) {
         composable(AuthRoutes.Onboard.routeName) {
             OnboardScreen(
@@ -34,7 +40,13 @@ fun NavGraphBuilder.addAuthNavGraph(navHostController: NavHostController, routeN
         }
 
         composable(AuthRoutes.SignUp.routeName) {
-            Text(text = "Auth/Signup", style = MaterialTheme.typography.h3)
+            SignUpScreen(
+                onGoToStudentHome = goToStudentGraph,
+                onGoToTeacherHome = goToTeacherGraph,
+                onBackClicked = {
+                    navHostController.popBackStack()
+                }
+            )
         }
 
         composable(AuthRoutes.LogIn.routeName) {

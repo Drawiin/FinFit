@@ -13,6 +13,7 @@ object Values {
     val x8 = 32.dp
     val x9 = 36.dp
     val x10 = 40.dp
+    val x14 = 56.dp
 }
 
 object Padding {

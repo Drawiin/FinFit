@@ -32,6 +32,7 @@ import com.drawiin.common_ui.theme.Padding
 import com.drawiin.common_ui.theme.PrimaryColor
 import com.drawiin.common_ui.theme.Values
 import com.drawiin.feature_auth.R
+import com.drawiin.feature_auth.presentation.isFinalPage
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
@@ -160,6 +161,3 @@ fun CarouselBody(
         )
     }
 }
-
-@ExperimentalPagerApi
-private fun PagerState.isFinalPage() = currentPage >= pageCount - 1
