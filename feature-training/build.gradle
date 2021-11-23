@@ -59,6 +59,9 @@ dependencies {
     implementation Libs.hilt
     kapt Libs.hiltKapt
 
+    implementation Libs.accompanistPager
+    implementation Libs.accompanistPagerIndicator
+
     implementation Libs.androidxCore
     implementation Libs.appCompat
 

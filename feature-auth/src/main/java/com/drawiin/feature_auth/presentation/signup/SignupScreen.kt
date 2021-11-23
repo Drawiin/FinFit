@@ -21,7 +21,7 @@ import com.drawiin.common_ui.theme.Padding
 import com.drawiin.core.model.UserType
 import com.drawiin.feature_auth.R
 import com.drawiin.feature_auth.core.model.SignupForm
-import com.drawiin.feature_auth.presentation.isFinalPage
+import com.drawiin.feature_auth.utils.isFinalPage
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState

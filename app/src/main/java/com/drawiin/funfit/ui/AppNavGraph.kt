@@ -1,5 +1,6 @@
 package com.drawiin.funfit.ui
 
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
@@ -10,6 +11,7 @@ import com.drawiin.feature_teacher.addTeacherNavGraph
 import com.drawiin.feature_training.addTrainingNavGraph
 import com.google.accompanist.pager.ExperimentalPagerApi
 
+@ExperimentalMaterialApi
 @ExperimentalPagerApi
 @Composable
 fun AppNavGraph() {
@@ -26,7 +28,12 @@ fun AppNavGraph() {
             }
         )
         addStudentNavGraph(navController, AppRoutes.Student.routeName)
-        addTeacherNavGraph(navController, AppRoutes.Teacher.routeName)
+        addTeacherNavGraph(
+            navController,
+            AppRoutes.Teacher.routeName
+        ) {
+            navController.navigate(AppRoutes.Training.routeName)
+        }
         addTrainingNavGraph(navController, AppRoutes.Training.routeName)
     }
 }

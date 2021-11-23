@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="teacher_drawer_title">Olá, Professor(a)</string>
+    <string name="teacher_home_title">Treinos</string>
+    <string name="teacher_new_training">Novo treino</string>
+    <string name="teacher_create">Criar</string>
+    <string name="teacher_add_exercise">Adicionar exercicio</string>
+    <string name="teacher_select_exercise">Selecione um exercicio para adiciona-lo ao treino</string>
+</resources>
