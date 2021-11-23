@@ -9,7 +9,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.drawiin.common_ui.theme.FunFitTheme
 
 @Composable
-fun InlineTextInput(modifier: Modifier = Modifier, value: String, onValueChanged: (String) -> Unit, textStyle: TextStyle = MaterialTheme.typography.h3) {
+fun InlineTextInput(
+    modifier: Modifier = Modifier,
+    value: String,
+    onValueChanged: (String) -> Unit,
+    textStyle: TextStyle = MaterialTheme.typography.h3
+) {
     BasicTextField(
         value = value,
         onValueChange = onValueChanged,

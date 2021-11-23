@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -28,34 +29,36 @@ fun AuthStartScreen(onGoToLogin: () -> Unit, onGoToSignup: () -> Unit) {
 
 @Composable
 private fun AuthStartBody(onGoToLogin: () -> Unit, onGoToSignup: () -> Unit) {
-    Column(
-        modifier = Modifier
-            .padding(vertical = Padding.medium)
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.SpaceBetween
-    ) {
-        Text(
-            stringResource(id = R.string.auth_start_title),
-            modifier = Modifier.padding(horizontal = Padding.small),
-            style = MaterialTheme.typography.h4
-        )
-        Image(
-            painter = painterResource(R.drawable.ic_auth_start_banner),
-            contentDescription = null,
-            contentScale = ContentScale.FillWidth
-        )
-        Column(modifier = Modifier.padding(horizontal = Padding.small)) {
-            PrimaryButton(
-                modifier = Modifier.fillMaxWidth(),
-                label = stringResource(id = R.string.auth_start_login),
-                onClick = onGoToLogin
+    Scaffold {
+        Column(
+            modifier = Modifier
+                .padding(vertical = Padding.medium)
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                stringResource(id = R.string.auth_start_title),
+                modifier = Modifier.padding(horizontal = Padding.small),
+                style = MaterialTheme.typography.h4
             )
-            Spacer(modifier = Modifier.height(Values.x1))
-            SecondaryButton(
-                modifier = Modifier.fillMaxWidth(),
-                label = stringResource(id = R.string.auth_start_singnup),
-                onClick = onGoToSignup
+            Image(
+                painter = painterResource(R.drawable.ic_auth_start_banner),
+                contentDescription = null,
+                contentScale = ContentScale.FillWidth
             )
+            Column(modifier = Modifier.padding(horizontal = Padding.small)) {
+                PrimaryButton(
+                    modifier = Modifier.fillMaxWidth(),
+                    label = stringResource(id = R.string.auth_start_login),
+                    onClick = onGoToLogin
+                )
+                Spacer(modifier = Modifier.height(Values.x1))
+                SecondaryButton(
+                    modifier = Modifier.fillMaxWidth(),
+                    label = stringResource(id = R.string.auth_start_singnup),
+                    onClick = onGoToSignup
+                )
+            }
         }
     }
 }

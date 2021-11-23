@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.drawiin.core.arch.NavigationRoute
+import com.drawiin.feature_teacher.create.TeacherCreateTrainingScreen
 import com.drawiin.feature_teacher.home.TeacherHomeScreen
 
 @ExperimentalMaterialApi
@@ -26,7 +27,9 @@ fun NavGraphBuilder.addTeacherNavGraph(
             )
         }
         composable(TeacherRoutes.CreateTraining.routeName) {
-
+            TeacherCreateTrainingScreen {
+                navHostController.popBackStack()
+            }
         }
     }
 }
