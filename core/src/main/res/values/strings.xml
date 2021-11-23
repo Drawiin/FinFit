@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FunFit</string>
+    <string name="drawer_option_licence">Licenças</string>
+    <string name="drawer_option_terms">Termos de uso</string>
+    <string name="drawer_option_log_out">Sair</string>
 </resources>

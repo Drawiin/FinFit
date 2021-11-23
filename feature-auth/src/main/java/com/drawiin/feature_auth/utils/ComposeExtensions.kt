@@ -1,4 +1,4 @@
-package com.drawiin.feature_auth.presentation
+package com.drawiin.feature_auth.utils
 
 import androidx.compose.foundation.MutatePriority
 import com.google.accompanist.pager.ExperimentalPagerApi

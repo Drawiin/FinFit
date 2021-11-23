@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="teacher_drawer_title">Olá, Professor(a)</string>
+    <string name="teacher_home_title">Treinos</string>
+</resources>

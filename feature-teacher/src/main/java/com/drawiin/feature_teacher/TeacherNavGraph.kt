@@ -1,17 +1,31 @@
 package com.drawiin.feature_teacher
 
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.drawiin.core.arch.NavigationRoute
+import com.drawiin.feature_teacher.home.TeacherHomeScreen
 
-fun NavGraphBuilder.addTeacherNavGraph(navHostController: NavHostController, routeName: String){
-    navigation(route = routeName, startDestination = TeacherRoutes.Home.routeName){
-        composable(TeacherRoutes.Home.routeName){
-
+@ExperimentalMaterialApi
+fun NavGraphBuilder.addTeacherNavGraph(
+    navHostController: NavHostController,
+    routeName: String,
+    onGoToTrainingDetail: (uid: String) -> Unit
+) {
+    navigation(route = routeName, startDestination = TeacherRoutes.Home.routeName) {
+        composable(TeacherRoutes.Home.routeName) {
+            TeacherHomeScreen(
+                onGoToCreateTraining = {
+                    navHostController.navigate(TeacherRoutes.CreateTraining.routeName)
+                },
+                onGoToTrainingDetail = {
+                    onGoToTrainingDetail(it)
+                }
+            )
         }
-        composable(TeacherRoutes.CreateTraining.routeName){
+        composable(TeacherRoutes.CreateTraining.routeName) {
 
         }
     }
