@@ -100,7 +100,7 @@ private fun TeacherHomeBody(
                },
                floatingActionButton = {
                     AddFab(onGoToCreateTraining)
-               }
+               },
           ) {
                Column(Modifier.padding(horizontal = Padding.small)) {
                     Text(

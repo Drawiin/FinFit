@@ -5,4 +5,5 @@
     <string name="teacher_new_training">Novo treino</string>
     <string name="teacher_create">Criar</string>
     <string name="teacher_add_exercise">Adicionar exercicio</string>
+    <string name="teacher_select_exercise">Selecione um exercicio para adiciona-lo ao treino</string>
 </resources>
