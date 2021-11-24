@@ -13,6 +13,18 @@ val Typography = Typography(
         fontSize = 18.sp,
         color = OnSurface
     ),
+    h1 = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 40.sp,
+        color = OnSurface
+    ),
+    h2 = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 36.sp,
+        color = OnSurface
+    ),
     h3 = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.SemiBold,

@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.drawiin.core.arch.NavigationRoute
 import com.drawiin.feature_training.exercise.detail.ExerciseDetailScreen
+import com.drawiin.feature_training.exercise.help.ExerciseHelpScreen
 import com.drawiin.feature_training.training.detail.TrainingDetailsScreen
 import com.google.accompanist.pager.ExperimentalPagerApi
 
@@ -25,11 +26,15 @@ fun NavGraphBuilder.addTrainingNavGraph(navHostController: NavHostController, ro
         }
 
         composable(TrainingRoutes.ExerciseDetail.routeName) {
-            ExerciseDetailScreen()
+            ExerciseDetailScreen {
+                navHostController.navigate(TrainingRoutes.ExerciseHelper.routeName)
+            }
         }
 
         composable(TrainingRoutes.ExerciseHelper.routeName) {
-
+            ExerciseHelpScreen {
+                navHostController.popBackStack()
+            }
         }
     }
 }

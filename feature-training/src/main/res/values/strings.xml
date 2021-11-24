@@ -2,4 +2,6 @@
 <resources>
     <string name="exercise_details">Como brincar</string>
     <string name="exercise_start_exercise">Começar brincadeira</string>
+    <string name="exercise_help_start_timer">Iniciar timer</string>
+    <string name="exercise_help_cancel_timer">Cancelar timer</string>
 </resources>

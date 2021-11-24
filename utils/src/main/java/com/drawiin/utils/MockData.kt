@@ -11,7 +11,7 @@ val exercises = listOf(
         description = "disponibilize um balão para cada criança e peça para que as coloque entre os joelhos, estipule uma linha de chegada, quem chegar primeiro sem derrubar os balões, vende a competição",
         difficulty = ExerciseDifficulty.HARD,
         images = listOf(),
-        duration = 15
+        duration = 10
     ),
     Exercise(
         uid = "ex02",

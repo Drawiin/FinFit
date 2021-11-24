@@ -43,19 +43,29 @@ import com.google.accompanist.pager.rememberPagerState
 
 @ExperimentalPagerApi
 @Composable
-fun ExerciseDetailScreen() {
+fun ExerciseDetailScreen(onGoToExerciseHelp: () -> Unit) {
     val pagerState = rememberPagerState()
     val images = listOf(
         R.mipmap.ex_01_01,
         R.mipmap.ex_01_02
     )
     val exercise = exercises[0]
-    ExerciseDetailBody(images = images, pageState = pagerState, exercise)
+    ExerciseDetailBody(
+        images = images,
+        pageState = pagerState,
+        exercise,
+        onGoToExerciseHelp
+    )
 }
 
 @ExperimentalPagerApi
 @Composable
-fun ExerciseDetailBody(@DrawableRes images: List<Int>, pageState: PagerState, exercise: Exercise) {
+fun ExerciseDetailBody(
+    @DrawableRes images: List<Int>,
+    pageState: PagerState,
+    exercise: Exercise,
+    onGoToExerciseHelp: () -> Unit
+) {
     Scaffold(
         topBar = {
             NavigationAppBar(
@@ -73,7 +83,7 @@ fun ExerciseDetailBody(@DrawableRes images: List<Int>, pageState: PagerState, ex
             Spacer(modifier = Modifier.height(Values.x6))
             ExerciseInfo(exercise)
             Spacer(modifier = Modifier.height(Values.x8))
-            ActionButton()
+            ActionButton(onGoToExerciseHelp)
         }
     }
 }
@@ -98,7 +108,7 @@ private fun ExerciseInfo(exercise: Exercise) {
 }
 
 @Composable
-private fun ActionButton() {
+private fun ActionButton(onGoToExerciseHelp: () -> Unit) {
     Box(
         Modifier
             .padding(horizontal = Padding.small)
@@ -107,7 +117,7 @@ private fun ActionButton() {
         PrimaryButton(
             modifier = Modifier.fillMaxWidth(),
             label = stringResource(id = R.string.exercise_start_exercise),
-            onClick = {}
+            onClick = onGoToExerciseHelp
         )
     }
 }
