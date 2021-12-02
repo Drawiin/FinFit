@@ -4,6 +4,8 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -32,7 +34,7 @@ fun SecondaryButton(
     OutlinedButton(
         onClick = onClick,
         shape = MaterialTheme.shapes.medium,
-        contentPadding = PaddingValues(Padding.small),
+        contentPadding = PaddingValues(Padding.tiny),
         border = BorderStroke(
             Border.small, OnSurface
         )
@@ -52,7 +54,11 @@ fun SecondaryButton(
                         Size.ButtonIcon
                     )
                 )
-            }
+            } ?: Spacer(
+                modifier = Modifier.height(
+                    Size.ButtonIcon
+                )
+            )
         }
     }
 }

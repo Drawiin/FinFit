@@ -13,10 +13,11 @@ object Values {
     val x8 = 32.dp
     val x9 = 36.dp
     val x10 = 40.dp
+    val x14 = 56.dp
 }
 
 object Padding {
-    val tiny = Values.x1
+    val tiny = Values.x2
     val small = Values.x4
     val medium = Values.x8
 }

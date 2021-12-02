@@ -6,36 +6,44 @@ import com.drawiin.core.model.Training
 
 val exercises = listOf(
     Exercise(
-        uid ="1",
-        title = "Pula Pula",
-        description = "loren ipsolon dolor sit ament",
-        difficulty = ExerciseDifficulty.EASY,
+        uid ="ex01",
+        title = "Corrida de balão",
+        description = "disponibilize um balão para cada criança e peça para que as coloque entre os joelhos, estipule uma linha de chegada, quem chegar primeiro sem derrubar os balões, vende a competição",
+        difficulty = ExerciseDifficulty.HARD,
         images = listOf(),
-        duration = 10
+        duration = 15
     ),
     Exercise(
-        uid = "2",
-        title = "Pula Pula 2",
-        description = "loren ipsolon dolor sit ament 2",
+        uid = "ex02",
+        title = "Festa de dança",
+        description = "Coloque música alegre e energizante e solte a dança!",
         difficulty = ExerciseDifficulty.EASY,
         images = listOf(),
-        duration = 10
+        duration = 7
+    ),
+    Exercise(
+        uid ="ex03",
+        title = "Polichinelos",
+        description = "Posicione-se em pé e pule mechendo os praços e as pernas pelo tempo descrito",
+        difficulty = ExerciseDifficulty.EASY,
+        images = listOf(),
+        duration = 2
     )
 )
 
 val trainings = listOf(
     Training(
-        uid = "isjdhajsd",
+        uid = "trn01",
         title = "Treinos 1B",
         exercises = exercises
     ),
     Training(
-        uid = "isjdhajsd",
+        uid = "trn02",
         title = "Treinos 2A",
         exercises = exercises
     ),
     Training(
-        uid = "isjdhajsd",
+        uid = "trn03",
         title = "Treinos 9C",
         exercises = exercises
     )
